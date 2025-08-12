@@ -15,8 +15,8 @@ def colors():
 @pytest.fixture
 def before_after():
     print("\n******* BEFORE! *******")
-    yield 100
-    print("\n******* AFTER! *******")
+    yield 100  # fixture value
+    print("\n******* AFTER! *******")  # teardown code
 
 def test_get_five_returns_five(spam):
     assert spam.get_five() == 5
@@ -26,6 +26,7 @@ def test_spam_has_get_five_method(spam):
 
 def test_some_color_is_pink(colors):
     assert any(color == 'pink' for color in colors)
+    assert 'pink' in colors
 
 def test_beforeafter(before_after, colors):
     assert before_after == 100
