@@ -15,9 +15,9 @@ things = (
 
 print("Name               Module?  Function?  Class?  Method?")
 for thing in things:
-    try:
+    if hasattr(thing, '__name__'):
         thing_name = thing.__name__
-    except AttributeError:
+    else:
         thing_name = type(thing).__name__ + " instance"
     print("{:18s} {!s:6s}   {!s:6s}     {!s:6s}  {!s:6s}".format(
         thing_name,

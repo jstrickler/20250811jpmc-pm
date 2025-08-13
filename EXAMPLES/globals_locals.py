@@ -20,3 +20,6 @@ print()
 g = globals()
 g['color'] = "blue"  # create a new variable
 print("color:", color)
+
+g['shout'] = lambda : print("AAAAAHHHHHHHHH")
+shout()

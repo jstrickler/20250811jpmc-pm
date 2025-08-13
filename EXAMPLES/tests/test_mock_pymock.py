@@ -1,6 +1,6 @@
-import pytest  # Needed for test runner
 from spamlib import spam
 
+# could be fixtures
 SEARCH_TERM = 'bug'
 SEARCH_STRING = 'lightning bug'
 

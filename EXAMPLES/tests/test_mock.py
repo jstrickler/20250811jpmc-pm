@@ -1,6 +1,7 @@
 import pytest
 import spamlib
 from spamlib.spam import Spam
+from hamlib import ham
 
 @pytest.fixture
 def ham_value():
@@ -8,7 +9,7 @@ def ham_value():
 
 @pytest.fixture
 def ham_result(ham_value):  # use ham_value fixture
-    return ham_value * 10
+    return ham(10)
 
 def test_spam_calls_ham(mocker, ham_value, ham_result):
     # need to patch spamlib.spam.ham, not hamlib.ham

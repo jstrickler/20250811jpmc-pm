@@ -1,10 +1,6 @@
 import sys
 from datetime import date
 import yaml
-try:
-    from yaml import CDumper as Dumper  # faster!
-except ImportError:
-    from yaml import Dumper
 
 potus = {
     'presidents': [
@@ -35,6 +31,6 @@ potus = {
 }
 
 with open('potus.yaml', 'w') as potus_out:
-    yaml.dump(potus, potus_out, Dumper=Dumper)
+    yaml.dump(potus, potus_out, Dumper=yaml.Dumper)
 
-yaml.dump(potus, sys.stdout, Dumper=Dumper)
+yaml.dump(potus, sys.stdout, Dumper=yaml.Dumper)
