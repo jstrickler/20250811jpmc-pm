@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+# the above is always required
+
+[project]
+name = "supercalc"
+version = "1.0.0"
+authors = [
+    { name="John Strickler", email="jstrickler@gmail.com" },
+]
+description = "A Super Calculator"
+readme = "README.md"
+requires-python = ">=3.0"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+dependencies = [
+#    'roman >= 3.0',
+]
+
+
+[project.scripts]
+scalc='supercalc:_cli_add'
+
+
+[project.urls]
+"Homepage" = "https://www.cja-tech.com"
+
