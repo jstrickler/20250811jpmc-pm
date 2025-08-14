@@ -15,7 +15,7 @@ def get_column_names(cursor):
 def iterrows_asdict(cursor):
     '''Generate rows as dictionaries'''
     column_names = get_column_names(cursor)
-    for row in cursor.fetchall():
+    for row in cursor:
         row_dict = dict(zip(column_names, row))
         yield row_dict
 

@@ -1,6 +1,7 @@
 import sqlite3
 
 # conn = sqlite3.Connection(...)
+#     sqlite3.connect(":memory:")
 with sqlite3.connect("../DATA/presidents.db") as conn:  # connect to the database
 
     s3_cursor = conn.cursor()  # get a cursor object
@@ -11,7 +12,8 @@ with sqlite3.connect("../DATA/presidents.db") as conn:  # connect to the databas
         from presidents
     ''')  # execute a SQL statement
 
-    for term, firstname, lastname, party in s3_cursor.fetchall():
+    # c.fetchall()  c.fetchmany(1000) c.fetchone()
+    for term, firstname, lastname, party in s3_cursor:
         print(f"{term:2d} {firstname:25} {lastname:20} {party}")
     print()
 
